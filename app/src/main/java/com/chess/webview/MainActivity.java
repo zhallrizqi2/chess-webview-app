@@ -1,4 +1,3 @@
-cat << 'EOF'
 package com.chess.webview;
 
 import android.annotation.SuppressLint;
@@ -26,10 +25,8 @@ public class MainActivity extends AppCompatActivity {
         webView = findViewById(R.id.webview);
         final ProgressBar progressBar = findViewById(R.id.progressBar);
 
-        // Aktifkan hardware acceleration untuk rendering lebih smooth
         webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
 
-        // Izinkan sistem Android mengingat & menyarankan ketikan (autofill)
         webView.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_YES);
 
         WebSettings settings = webView.getSettings();
