@@ -14,6 +14,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TARGET_URL = "https://www.chess.com";
+    private static final String CUSTOM_USER_AGENT =
+        "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36";
+
     private WebView webView;
 
     @SuppressLint("SetJavaScriptEnabled")
@@ -26,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         final ProgressBar progressBar = findViewById(R.id.progressBar);
 
         webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
-
         webView.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_YES);
 
         WebSettings settings = webView.getSettings();
@@ -37,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         settings.setUseWideViewPort(true);
         settings.setMediaPlaybackRequiresUserGesture(false);
         settings.setCacheMode(WebSettings.LOAD_DEFAULT);
-        settings.setUserAgentString(BuildConfig.CUSTOM_USER_AGENT);
+        settings.setUserAgentString(CUSTOM_USER_AGENT);
 
         webView.setWebViewClient(new WebViewClient());
         webView.setWebChromeClient(new WebChromeClient() {
@@ -48,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        webView.loadUrl(BuildConfig.TARGET_URL);
+        webView.loadUrl(TARGET_URL);
     }
 
     @Override
