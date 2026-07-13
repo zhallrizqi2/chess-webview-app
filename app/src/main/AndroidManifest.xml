@@ -6,8 +6,8 @@
 
     <application
         android:allowBackup="true"
-        android:label="Chess"
         android:icon="@drawable/ic_launcher"
+        android:label="Chess"
         android:theme="@style/Theme.ChessWebView">
 
         <activity
